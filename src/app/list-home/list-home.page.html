@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Artículos</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content #contentlist [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let item of info" (click)="setOpen(true, item)">
+      <ion-card class="ion-card-list">
+        <img alt="Silhouette of mountains" src="{{item.portada}}" />
+        <ion-card-header>
+          <ion-card-title class="title-card-list">{{item.titulo}}</ion-card-title>
+          <ion-card-subtitle>{{item.fecha}}</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content class="title-card-content">
+          {{item.desc_corta}}
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title></ion-title>
+          <ion-buttons slot="start">
+            <ion-button (click)="setOpen(false, null)">
+              <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+            </ion-button>
+            
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content #contentdetail class="ion-padding">
+        <ion-card class="ion-card-list">
+          <img alt="Silhouette of mountains" src="{{itemsel.portada}}" />
+          <ion-card-header>
+            <ion-card-title>{{itemsel.titulo}}</ion-card-title>
+            <ion-card-subtitle>{{itemsel.fecha}}</ion-card-subtitle>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <p *ngFor="let itemp of arr_desc" style="margin-bottom: 16px;">{{itemp}}</p>
+          </ion-card-content>
+        </ion-card>
+
+      </ion-content>
+      <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+        <ion-fab-button color="dark" (click)="scrollToTopDetail()">
+          <ion-icon name="chevron-up-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ng-template>
+    
+  </ion-modal>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button color="dark" (click)="scrollToTop()">
+      <ion-icon name="chevron-up-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Cursos</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-card class="ion-card-list">
+        <img alt="Silhouette of mountains" src="../../assets/courses/Curso-Educanino.jpg" />
+      </ion-card>
+    </ion-item>
+    <ion-item>
+      <ion-card class="ion-card-list">
+        <img alt="Silhouette of mountains" src="../../assets/courses/Curso-Dieta-Barft-Perros-y-gatos-vitales.jpg" />
+      </ion-card>
+    </ion-item>
+    <ion-item>
+      <ion-card class="ion-card-list">
+        <img alt="Silhouette of mountains" src="../../assets/courses/Curso-Pasteleria-canina-y-felina.jpg" />
+      </ion-card>
+    </ion-item>
+    <ion-item>
+      <ion-card class="ion-card-list">
+        <img alt="Silhouette of mountains" src="../../assets/courses/Curso-peluqueria-para-perros.jpg" />
+      </ion-card>
+    </ion-item>
+  </ion-list>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button color="dark" (click)="scrollToTop()">
+      <ion-icon name="chevron-up-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
